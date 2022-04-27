@@ -38,6 +38,10 @@ if ($hobby1) {
           }
         else{print ("<br>Your hobby is $hobby2");}
       }
+      else{if ($hobby3) {
+        print ("<br>Your hobby is $hobby3 ");
+      }
+    else{print ("<br>Your hobby is none");}}
   }
 
 print ("<br> Contact preference is $contact");
