@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right</title>
+
+    <script>
+        function addBlog() {
+            var title = document.getElementById('blogTitle').value;
+            var content = document.getElementById('blogContent').value;
+
+            const d = new Date();
+            d.setTime(d.getTime() + (24 * 60 * 60 * 1000));
+            let expires = "expires="+d.toUTCString();
+            document.cookie = "title="+title+";"+expires+";path=/";
+            document.cookie = "content="+content+";"+expires+";path=/" ;
+        }
+
+    </script>
+</head>
+<body>
+    <div>
+        <form action="">
+            <div class="title">
+                <label for="blogTitle">Title</label>
+                <input type="text" id="blogTitle">
+            </div>
+            <div class="content">
+                <label for="blogContent">Content</label>
+                <textarea id="blogContent" cols="20" rows="5"></textarea>
+            </div>
+            <button type="submit" onclick="addBlog()">Add</button>
+        </form>
+    </div>
+</body>
+</html>
