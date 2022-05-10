@@ -1,0 +1,18 @@
+#form {
+    display: flex;
+    justify-content: left;
+}
+#cat-id {
+    margin-right: 10px;
+}
+
+#cat-id select {
+    width: 100%;
+}
+
+#business {
+}
+
+#business input {
+    width: 100%;
+}

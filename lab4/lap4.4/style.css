@@ -1,0 +1,13 @@
+#content {
+    display: flex;
+    justify-content: left;
+    
+}
+
+table {
+    margin: 5px;
+}
+
+th {
+    font-weight: 500;
+}
