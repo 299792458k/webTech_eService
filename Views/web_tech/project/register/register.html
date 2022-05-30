@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css">
+    <title>Register</title>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <h1>REGISTER</h1>
+        </div>
+        <div class="content">
+            <form action="">
+                <div class="name">
+                    <label for="user-name">User Name</label>
+                    <input type="text" id="user-name" placeholder="Ho Van Y" required>
+                </div>
+
+                <div class="email">
+                    <label for="user-email">Email</label>
+                    <input type="text" id="user-email" placeholder="webtech@gmail.com" required onblur="emailCheck()">
+                </div>
+                <p id="email-inform">This field must be email form</p>
+
+                <div class="password">
+                    <label for="user-password">Password</label>
+                    <input type="text" id="user-password" placeholder="abc123" required onblur="passwordCheck()">
+                </div>
+                <p id="password-inform">Password is at least 6 characters</p>
+
+                <div class="password-check">
+                    <label for="user-password-check">Password confirm</label>
+                    <input type="text" id="user-password-check" placeholder="abc123" required onblur="passwordRecheck()">
+                </div>
+                <p id="password-check-inform">Password-confirm is incorrect</p>
+
+                <button type="submit" id="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./register.js"></script>
+</body>
+</html>

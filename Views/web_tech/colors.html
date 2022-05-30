@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+       
+        function redOver() {
+            document.getElementById('red').style.color = "red";
+        }
+        function redOut() {
+            document.getElementById('red').style.color = "black"
+        }
+
+        function greenOver() {
+            document.getElementById('green').style.color = "green";
+        }
+        function greenOut() {
+            document.getElementById('green').style.color = "black"
+        }
+
+        function blueOver() {
+            document.getElementById('blue').style.color = "blue";
+        }
+        function blueOut() {
+            document.getElementById('blue').style.color = "black"
+        }
+        
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div class="text-red">
+            <h2>RED</h2>
+            <p id="red" onmouseover="redOver()" onmouseout="redOut()">This is red text</p>
+        </div>
+
+        <div class="text-green">
+           <h2>GREEN</h2>
+            <p id="green" onmouseover="greenOver()" onmouseout="greenOut()">This is green text</p>
+        </div>
+
+        <div class="text-blue">
+           <h2>BLUE</h2>
+            <p id="blue" onmouseover="blueOver()" onmouseout="blueOut()">This is blue text</p>
+        </div>
+
+    </div>
+
+    <style>
+        .main{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .text-red h2{
+           color: red;
+        }
+        .text-green h2{
+            color: green;
+         }
+        .text-blue h2{
+            color: blue;
+         }
+    </style>
+
+    
+    
+</body>
+</html>
