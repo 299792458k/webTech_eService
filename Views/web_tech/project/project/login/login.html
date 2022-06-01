@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-form">
+        <div class="main">
+            <div class="header">
+                <h1>LOGIN</h1>
+                <hr>
+            </div>
+            <div class="content">
+                <form action="">
+                    <div class="email">
+                        <label for="user-email">Email</label>
+                        <input type="text" id="user-email" placeholder="webtech@gmail.com" required onblur="emailCheck()">
+                    </div>
+                    <p id="email-inform">This field must be email form</p>
+                    <div class="password">
+                        <label for="user-password">Password</label>
+                        <input type="text" id="user-password" placeholder="abc123" required onblur="passwordCheck()">
+                    </div>
+                    <p id="password-inform">Password is at least 6 characters</p>
+                    <button type="submit" id="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="./login.js"></script>
+</body>
+</html>
