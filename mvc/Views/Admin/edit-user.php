@@ -72,6 +72,10 @@ color:#69707a;
     color: #0061f2;
     border-bottom-color: #0061f2;
 }
+
+.test {
+    color: red
+}
 .nav-borders .nav-link {
     color: #69707a;
     border-bottom-width: 0.125rem;
@@ -148,9 +152,10 @@ color:#69707a;
                 <div class="card-header">Ảnh đại diện</div>
                 <div class="card-body text-center">
                     <!-- Profile picture image-->
-                    <img class="img-account-profile rounded-circle mb-2" src="images/pic1.png" alt="">
+                    <img class="img-account-profile rounded-circle mb-2" src= "images/pic1.png" alt=""> 
+                     <!--src="images/pic1.png"-->
                     <!-- Profile picture help block-->
-                    <div class="small font-italic text-muted mb-4">JPG hoặc PNG </div>
+                    <div class="small font-italic text-muted mb-4 test">JPG hoặc PNG </div>
                     <!-- Profile picture upload button-->
                     <button class="btn btn-primary" type="button">Tải ảnh lên</button>
                 </div>

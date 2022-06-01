@@ -1,33 +1,20 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
         <style>
-            .header, .footer {
-                background-color: coral;
-                padding: 20px;
-            }
-            .content {
-                background-color: yellow;
-                padding: 10px;
-            }
+            <?php include "./mvc/Views/Vu/css/chitietsp.css"; ?>
+            <?php include "./mvc/Views/Vu/css/footer.css"; ?>
+            <?php include "./mvc/Views/Vu/css/header.css"; ?>
+            <?php include "./mvc/Views/Vu/css/style.css"; ?>
+            <?php include "./mvc/Views/Vu/css/webpage.css"; ?>
+
         </style>  
     </head>
     <body>
-        <div class="header">
-            <?php require_once './mvc/Views/Blocks/Header.php'; ?>
-        </div>
-        <div class="content">
-            <?php
-            while ($row = mysqli_fetch_array($data['sv'])) {
-                echo $row['id'].$row['name'].$row['age']."<br/>";
-            }
-            ?>
-        </div>
-        <div class="footer">
-            <?php require_once './mvc/Views/Blocks/Footer.php'; ?>
-        </div>
+        <?php require_once './mvc/Views/Vu/header.html'; ?>
+        <?php require_once './mvc/Views/Vu/webpage.html'; ?>
+        <?php require_once './mvc/Views/Vu/footer.html'; ?>
     </body>
 </html>

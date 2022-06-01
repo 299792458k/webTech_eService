@@ -3,9 +3,13 @@
 class HomeController extends BaseController {
 
     public function index() {
-        echo __METHOD__;
+        $this->view('MasterLayout');
     }
 
+    public function index2() {
+        $this->view('SecondLayout');
+    }
+    
     public function show($ho, $ten) {
 //        echo $ho."-".$ten;
         $sv = $this->model('SinhVienModel')->getAll();
