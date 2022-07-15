@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/block.css">
 
-    <title>Sản phẩm</title>
+    <title>Danh sách sản phẩm</title>
 </head>
 <body>
     <?php
@@ -15,152 +15,185 @@ require_once "block/header.php";
 ?>
 
   <section>
-
-  
-  <article>
-
-
-
-        <div class="">
-
-
-
-<style>
-.ct {
-    font-size: 30px;
-    text-align:center;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    text-transform: uppercase;
-
+      <div><style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
-
-.cc {
-    font-size: medium;
-    background-color: white ;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    text-align: center;
+::selection{
+  background: orange;
+  color: #fff;
 }
-.cc li {
-    list-style: none;
+html,body{
+  display: grid;
+  height: 100%;
+  background: whitesmoke;
 }
- th, td {
-  border-bottom: 1px solid;
-  border-color: #ff6600;
-  padding: 15px;
+.container{
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
 }
-.tabletitle {
-    font-size: medium;
-    color: #fff;
-    background-color: #ff6600;
-    width: 150px;
-    height: 40px;
-    align-items: center;
-    text-align:center;
-    padding: 10px;
-    border: #fff;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    text-transform: uppercase;
-
+.container .box{
+  width: calc(33% - 10px);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 30px;
+  border-radius: 5px;
 }
-/* manage button  */
-
-.viewbutton {
-    font-size: medium;
-    color: #fff;
-    background-color: rgb(69, 119, 226);
-    width: 150px;
-    height: 40px;
-    align-items: center;
-    padding: 10px;
-    border: #fff;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    text-transform: uppercase;
-    text-align: center;
+.box .quote i{
+margin-top: 10px;
+font-size: 45px;
+color: #17c0eb
+}
+.container .box .image{
+  margin: 10px 0;
+  height: 150px;
+  width: 150px;
+  background: orange;
+  padding: 3px;
+  border-radius: 50%;
+}
+.box .image img{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+.box p{
+  text-align: justify;
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.box .name_job{
+  margin: 10px 0 3px 0;
+  color: orange;
+  font-size: 18px;
+  font-weight: 600;
+}
+.rating i{
+  font-size: 18px;
+  color: orange;
+  margin-bottom: 5px;
+}
+.btns{
+  margin-top: 20px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.btns button{
+  background: orange;
+  width: 100%;
+  padding: 9px 0px;
+  outline: none;
+  border: 2px solid orange;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  color: orange;
+  transition: all 0.3s linear;
+}
+.btns button:first-child{
+  background: none;
+  margin-right: 5px;
+}
+.btns button:last-child{
+  color: #fff;
+  margin-left: 5px;
+}
+.btns button:first-child:hover{
+  background: orange;
+  color: #fff;
+}
+.btns button:hover{
+  color: #fff;
+}
+@media (max-width:1045px){
+  .container .box{
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+}
+@media (max-width:710px){
+  .container .box{
+    width: 100%;
+  }
 }
 
-.editbutton {
-    font-size: medium;
-    color: #fff;
-    background-color: #666;
-    width: 150px;
-    height: 40px;
-    align-items: center;
-    padding: 5px;
-    border: #fff;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    text-transform: uppercase;
-    text-align: center;
 
-}
-
-.deletebutton {
-    font-size: medium;
-    color: #fff;
-    background-color: rgb(255, 77, 77);
-    width: 150px;
-    height: 40px;
-    align-items: center;
-    padding: 5px;
-    border: #fff;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    text-transform: uppercase;
-    text-align: center;
-
-}
-.deletebutton,
-.viewbutton,
-.editbutton{
-    text-decoration:none
-}
 </style>
-<div class="ct">Món ăn</div>
-<table style="width:100%" class="">
-    <tr class="tabletitle">
-        <th>STT</th>
-        <th>Tên món</th>
-        <th>Mã món</th>
-        <th>Giá tiền</th>
-        <th>Sửa/ Xóa</th>
-    </tr>
 
-        <tr>
-        <td><?php echo 1; ?></td>
-        <td> <?php echo 'Bánh giò' ; ?></td>
-        <td><?php echo 'MX1001'; ?></td>
-        <td><?php echo '20000'; ?></td>
-        <td>   <?php 
-                $edit_icon = "<a href='edit-product.php' class='editbutton'> Sửa </a>";
-                $delete_icon = " <a href='#' id='bin' class='deletebutton'> Xóa</a>";
-                echo $edit_icon . $delete_icon;
-     ?>
-        </td>
-     </tr>
-     </tr>
+    <div class="container">
+      <div class="box">
+      <div class="image">
+         <!-----<img src="img1.jpeg">------->
+        </div>
+        <div class="name_job">Pizza Thịt Và Xúc Xích</div>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+        <p> Pizza Thịt Và Xúc Xích Thơm Ngon Và Giàu Protein Với Thịt Xông Khói, Xúc Xích, ThịT Bò, Giăm Bông Và Pepperoni.</p>
+        <div class="btns">
+          <button>Xem</button>
+          <button>Xóa</button>
+        </div>
+      </div>
+      <div class="box">
+        <div class="image">
+        <!------  <img src="img2.jpeg" alt="">--->
+        </div>
+        <div class="name_job">Pizza Thịt Và Xúc Xích</div>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+        <p> Pizza Thịt Và Xúc Xích Thơm Ngon Và Giàu Protein Với Thịt Xông Khói, Xúc Xích, ThịT Bò, Giăm Bông Và Pepperoni.</p>
+        <div class="btns">
+          <button>Xem</button>
+          <button>Xóa</button>
+        </div>
+      </div>
+      <div class="box">
+        <div class="image">
+         <!---- <img src="img3.jpeg" alt="">---->
+        </div>
+        <div class="name_job">Pizza Thịt Và Xúc Xích</div>
+          <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+        <p> Pizza Thịt Và Xúc Xích Thơm Ngon Và Giàu Protein Với Thịt Xông Khói, Xúc Xích, ThịT Bò, Giăm Bông Và Pepperoni.</p>
+        <div class="btns">
+          <button>Xem</button>
+          <button>Xóa</button>
+        </div>
+      </div>
+    </div>
 
-<tr>
-
-
-    </table>
-
-
-
-</div>
-
-<div style="height:220px;"></div>
-</article>
+                            
+        </div>        <div style="height:220px;"></div>
 </section>
 
 

@@ -1,5 +1,6 @@
 
     <!-- footer starts -->
+    <footer>
     <section class="footer" id="footer">
         <a href="" class="logo">
             <i class="fas fa-utensils"></i>Food4U
@@ -15,4 +16,5 @@
         </div>
     </section>
     <!-- footer ends -->
-    
+    </footer>
+
