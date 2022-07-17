@@ -1,12 +1,8 @@
 <?php
 
-class HomeController extends BaseController {
+class AdminController extends BaseController {
 
     public function index() {
-        $this->view('MasterLayout');
-    }
-
-    public function index2() {
         $result = $this->model('WishList')->getAll();
         $users = [];
         while ($row = mysqli_fetch_array($result)) :
@@ -18,16 +14,6 @@ class HomeController extends BaseController {
                 mysqli_free_result($result);
         $this->view('Admin/manage-user', [
             'users' => $users,
-        ]);
-    }
-    
-    public function show($ho, $ten) {
-//        echo $ho."-".$ten;
-        $sv = $this->model('SinhVienModel')->getAll();
-
-        $this->view('MasterLayout',[
-            'Page' => 'New',
-            'sv' => $sv
         ]);
     }
 }

@@ -134,31 +134,38 @@ color: #17c0eb
 
 
 </style>
-
     <div class="container">
-      <div class="box">
-      <div class="image">
-         <!-----<img src="img1.jpeg">------->
+    <?php
+    for($i = 0; $i < count($data['users']); $i++) {
+      $sdt = $data['users'][$i]['sdt'];
+      $name = $data['users'][$i]['name'];
+      $id = $data['users'][$i]['id'];
+      echo "
+      <div class=\"box\">
+      <div class=\"image\">
         </div>
-        <div class="name_job">Nguyễn Văn A</div>
-        <div class="rating">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
+        <div class=\"name_job\"> $name </div>
+        <div class=\"rating\">
+          <i class=\"fas fa-star\"></i>
+          <i class=\"fas fa-star\"></i>
+          <i class=\"far fa-star\"></i>
+          <i class=\"far fa-star\"></i>
+          <i class=\"far fa-star\"></i>
         </div>
-        <p>Tài khoản: anhanh123</p>
-        <p>Số điện thoại: 0987654321</p>
+        <p>ID: $id</p>
+        <p>Số điện thoại: $sdt </p>
 
-        <div class="btns">
+        <div class=\"btns\">
           <button>Xem</button>
           <button>Xóa</button>
         </div>
-      </div>
-      <div class="box">
+      </div>";
+    }
+    ?>
+    
+<!--      <div class="box">
         <div class="image">
-        <!------  <img src="img2.jpeg" alt="">--->
+        ----  <img src="img2.jpeg" alt="">-
         </div>
         <div class="name_job">Nguyễn Văn A</div>
         <div class="rating">
@@ -177,7 +184,7 @@ color: #17c0eb
       </div>
       <div class="box">
         <div class="image">
-         <!---- <img src="img3.jpeg" alt="">---->
+         -- <img src="img3.jpeg" alt="">--
         </div>
         <div class="name_job">Nguyễn Văn A</div>
           <div class="rating">
@@ -193,7 +200,7 @@ color: #17c0eb
           <button>Xem</button>
           <button>Xóa</button>
         </div>
-      </div>
+      </div>-->
     </div>
 
                             
