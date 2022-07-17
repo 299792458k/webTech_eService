@@ -158,34 +158,34 @@ form .user-details .input-box{
   <div class="container">
     <div class="title">Đăng ký</div>
     <div class="content">
-      <form action="#">
+      <form action="/webTech_eService/user/registerUser" method="POST">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Họ tên</span>
-            <input type="text" placeholder="Nguyễn Văn A" required>
+            <input type="text" name="username" placeholder="Nguyễn Văn A" required>
           </div>
           <div class="input-box">
-            <span class="details">Tên đăng nhập</span>
-            <input type="text" placeholder="anhsao123" required>
+            <span class="details">Địa chỉ</span>
+            <input type="text" name="address" placeholder="anhsao123" required>
           </div>
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" placeholder="anguyen2k1@gmail.com" required>
+            <input type="email" name="email" placeholder="anguyen2k1@gmail.com" required>
           </div>
           <div class="input-box">
             <span class="details">Số điện thoại</span>
-            <input type="text" placeholder="0986423359" required>
+            <input type="text" name="phonenumber" placeholder="0986423359" required>
           </div>
           <div class="input-box">
             <span class="details">Mật khẩu</span>
-            <input type="text" placeholder="Anh123anh" required>
+            <input type="password" name="password" placeholder="Anh123anh" required>
           </div>
           <div class="input-box">
             <span class="details">Nhập lại mật khẩu</span>
-            <input type="text" placeholder="Anh123anh" required>
+            <input type="text"  placeholder="Anh123anh" required>
           </div>
         </div>
-        <div class="gender-details">
+        <!-- <div class="gender-details">
           <input type="radio" name="gender" id="dot-1">
           <input type="radio" name="gender" id="dot-2">
           <input type="radio" name="gender" id="dot-3">
@@ -204,9 +204,9 @@ form .user-details .input-box{
             <span class="gender">Khác</span>
             </label>
           </div>
-        </div>
+        </div> -->
         <div class="button">
-          <input type="submit" value="Đăng ký">
+          <input type="submit">
         </div>
       </form>
     </div>
