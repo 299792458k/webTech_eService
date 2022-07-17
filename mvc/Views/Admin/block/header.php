@@ -47,7 +47,7 @@ body{
   min-height: 100vh;
 }
 nav{
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -56,6 +56,9 @@ nav{
   background: #fff;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   z-index: 99;
+}
+a:hover {
+  color: #3E8DA8;
 }
 nav .navbar{
   height: 100%;
@@ -359,10 +362,10 @@ nav .navbar .links li .sub-menu li{
           <!-- <li><a href="#">Trang chủ</a></li> -->
 
           <li>
-            <a href="#">Sản phẩm</a>
-            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <a href="#">Thêm sản phẩm</a>
+            <!-- <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i> -->
             <ul class="htmlCss-sub-menu sub-menu">
-            <li class="more">
+            <!-- <li class="more">
                 <span><a href="#">Danh mục sản phẩm</a>
                 <i class='bx bxs-chevron-right arrow more-arrow'></i>
               </span>
@@ -375,15 +378,15 @@ nav .navbar .links li .sub-menu li{
 
 
                 </ul>
-              </li> 
-              <li><a href="#">Thêm sản phẩm</a></li>
-              <li><a href="#">Cập nhật sản phẩm</a></li>
-              <li><a href="#">Xóa sản phẩm</a></li>
+              </li>  -->
+              <!-- <li><a href="#">Thêm sản phẩm</a></li> -->
+              <!-- <li><a href="#">Cập nhật sản phẩm</a></li>
+              <li><a href="#">Xóa sản phẩm</a></li> -->
 
 
             </ul>
           </li>
-          <li>
+          <!-- <li>
             <a href="#">Người dùng</a>
             <i class='bx bxs-chevron-down js-arrow arrow '></i>
             <ul class="js-sub-menu sub-menu">
@@ -391,12 +394,12 @@ nav .navbar .links li .sub-menu li{
               <li><a href="#">Thêm người dùng</a></li>
               <li><a href="#">Xóa người dùng</a></li>
             </ul>
-          </li>
+          </li> -->
           <li><a href="#">Đơn hàng</a>
           <i class='bx bxs-chevron-down js-arrow arrow '></i>
             <ul class="js-sub-menu sub-menu">
-              <li><a href="#">Danh sách đơn hàng</a></li>
-              <li><a href="#">Đơn hàng cần xác nhận</a></li>
+              <li><a href="/webTech_eService/order/index">Danh sách đơn hàng</a></li>
+              <!-- <li><a href="#">Đơn hàng cần xác nhận</a></li> -->
 
             </ul>
           </a>
@@ -406,7 +409,7 @@ nav .navbar .links li .sub-menu li{
             <i class='bx bxs-chevron-down js-arrow arrow '></i>
             <ul class="js-sub-menu sub-menu">
               <li><a href="#">Thông tin</a></li>
-              <li><a href="#">Đăng xuất</a></li>
+              <li><a href="/webTech_eService/admin/logout">Đăng xuất</a></li>
             </ul>
           </li>
         </ul>

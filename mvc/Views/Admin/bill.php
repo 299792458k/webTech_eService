@@ -15,7 +15,8 @@ require_once "block/header.php";
 ?>
 
   <section>
-      <div><style>
+      <div style="display:flex; justify-content:center; align-items:center; height: 80vh;">
+        <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
@@ -48,7 +49,7 @@ body:before{
   max-width: 750px;
   background: #fff;
   border-radius: 12px;
-  justify-content: space-between;
+  justify-content: center;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
   position: relative;
 }
@@ -63,7 +64,7 @@ body:before{
   clip-path: circle(65% at right 35%);
 }
 .container .box.one{
-  padding: 35px 5px 0px 35px;
+  padding: 35px 35px 35px 35px;
 }
 .box.one .details .topic{
   font-size: 30px;
@@ -71,8 +72,9 @@ body:before{
 }
 .box.one .details p{
   color: #737373;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
+  line-height: 30px;
 }
 .box.one .rating{
   color: #fd9bb0;
@@ -121,7 +123,7 @@ body:before{
 }
 .container .box.two .image{
   position: relative;
-  right: 0
+  right: 0;
   top: 0;
   height: 340px;
   width: 430px;
@@ -175,40 +177,50 @@ body:before{
   <div class="container">
     <div class="box one">
       <div class="details">
-        <div class="topic">Mã Đơn BP1058</div>
-        <p>Khách hàng: anhsao123 </p>
-            <p>SĐT: 0987654321</p>
-            <p>Địa chỉ: Số 10 Vũ Trọng Phụng</p>
-            <p>Thời gian: 16/7/2022 13:40:00</p>
-            <p>Sản phẩm:</p>
-            <p>1. Pizza Hawaiian. SL: 1. 110000 </p>
-            <p>2. Pizza Thập Cẩm. SL: 1. 130000 </p>
-            <p>3. Pizza Pepperoni. SL: 2. 220000 </p>
-            <p>4. Pizza Rau Củ (Xốt Cà Chua). SL: 2. 160000 </p>
-            <p>Voucher: Giảm 80000</p>
-            <p>Tổng</p>
+        <?php
+          $sum = 0;
+          foreach ($data['order'] as $product) {
+            echo '
+            <div class="topic">Mã Đơn: '.$product['id'].' </div>
+            <p>Khách hàng:  '.$product['fullname'].'</p>
+            <p>SĐT: '.$product['phonenumber'].'</p>
+            <p>Địa chỉ: '.$product['address'].'</p>
+            <p>Thời gian: '.$product['order_time'].'</p>
+            <p>Sản phẩm:</p> '; 
+          
+            $items = [];
+            if(array_key_exists($product['id'], $data['detail'])){
+                $items = $data['detail'][$product['id']];
+                foreach ($items as $item) {
+                    $sum += $item['quatity'] * $item['product_price'];
+                    echo $item['product_name']. " ---- SL: " .$item['quatity']."<br>";
+                }
+              }
+            
+            echo '
+                  <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  </div>
+                  </div>
+                  <p>Tổng: '.$sum.' vnđ</p>
+                  <div class="button1">
+                    <button onclick="confirm_delete('.$product['id'].')">Xác nhận</button>
+                    <button><a href="/webTech_eService/order/index" style="text-decoration: none;">Thoát</a></button>
+                  </div>
+            ';
+          };
+          
 
-        <div class="rating">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
-        </div>
-          <div class="price-box">
-            <div class="discount">$620000</div>
-            <div class="price">Còn: $540000</div>
-          </div>
-      </div>
-      <div class="button1">
-        <button>Xác nhận</button>
-        <button>Hủy</button>
-      </div>
+        ?>
     </div>
 
   </div>
@@ -221,6 +233,16 @@ body:before{
 <?php
 require_once "block/footer.php";
 ?>
+
+<script>
+    function confirm_delete(href) {
+      if (confirm("Đã hoàn thành đơn hàng?") == true) {
+        window.location.href = "http://localhost/webTech_eService/order/update/"+href;
+      } else {
+//        text = "You canceled!";
+      }
+    }
+</script>
     
     </body>
 </html>
