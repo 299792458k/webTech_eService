@@ -105,7 +105,7 @@ nav .navbar .links li a{
 nav .navbar .links li .arrow{
   /* background: red; */
   height: 100%;
-  width: 22px;
+  width: 40px;
   line-height: 70px;
   text-align: center;
   display: inline-block;
@@ -249,7 +249,7 @@ nav .navbar .links li:hover .js-sub-menu{
     top: 0;
     left: -100%;
     display: block;
-    max-width: 270px;
+    max-width: 400px;
     width: 100%;
     background:  #fff;
     line-height: 40px;
@@ -359,11 +359,11 @@ nav .navbar .links li .sub-menu li{
           <!-- <li><a href="#">Trang chủ</a></li> -->
 
           <li>
-            <a href="#">Sản phẩm</a>
+            <a href="./manage-product.php">Sản phẩm</a>
             <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
             <ul class="htmlCss-sub-menu sub-menu">
             <li class="more">
-                <span><a href="#">Danh mục sản phẩm</a>
+                <span><a href="./manage-product.php">Danh mục sản phẩm</a>
                 <i class='bx bxs-chevron-right arrow more-arrow'></i>
               </span>
                 <ul class="more-sub-menu sub-menu">
@@ -376,9 +376,9 @@ nav .navbar .links li .sub-menu li{
 
                 </ul>
               </li> 
-              <li><a href="#">Thêm sản phẩm</a></li>
-              <li><a href="#">Cập nhật sản phẩm</a></li>
-              <li><a href="#">Xóa sản phẩm</a></li>
+              <li><a href="./add-product.php">Thêm sản phẩm</a></li>
+              <!-- <li><a href="./edit-product.php">Cập nhật sản phẩm</a></li> -->
+              <!-- <li><a href="./manage-product.php">Xóa sản phẩm</a></li> -->
 
 
             </ul>
@@ -387,15 +387,15 @@ nav .navbar .links li .sub-menu li{
             <a href="#">Người dùng</a>
             <i class='bx bxs-chevron-down js-arrow arrow '></i>
             <ul class="js-sub-menu sub-menu">
-              <li><a href="#">Danh sách người dùng</a></li>
-              <li><a href="#">Thêm người dùng</a></li>
-              <li><a href="#">Xóa người dùng</a></li>
+              <li><a href="./manage-user.php">Danh sách người dùng</a></li>
+              <li><a href="./add-user.php">Thêm người dùng</a></li>
+              <!-- <li><a href="#">Xóa người dùng</a></li> -->
             </ul>
           </li>
           <li><a href="#">Đơn hàng</a>
           <i class='bx bxs-chevron-down js-arrow arrow '></i>
             <ul class="js-sub-menu sub-menu">
-              <li><a href="#">Danh sách đơn hàng</a></li>
+              <li><a href="./manage-bill.php">Danh sách đơn hàng</a></li>
               <li><a href="#">Đơn hàng cần xác nhận</a></li>
 
             </ul>
@@ -405,8 +405,8 @@ nav .navbar .links li .sub-menu li{
             <a href="#">Admin</a>
             <i class='bx bxs-chevron-down js-arrow arrow '></i>
             <ul class="js-sub-menu sub-menu">
-              <li><a href="#">Thông tin</a></li>
-              <li><a href="#">Đăng xuất</a></li>
+              <li><a href="./admin.php">Thông tin</a></li>
+              <li><a href="./login.php">Đăng xuất</a></li>
             </ul>
           </li>
         </ul>
