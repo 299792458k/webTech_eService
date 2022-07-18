@@ -8,7 +8,9 @@ class DB extends mysqli {
     protected $user = "root";
     protected $pass = "";
     protected $dbName = "laravel-api";
-
+    //protected $user = "phpuser";
+    //protected $pass = "phpuserpw";
+    //protected $dbName = "wishlist";
    
     // auto connect to DB whenever a DB is instantiated
     // = mysqli_connect(dbhost,user,pass) + mysqli_select_db(con,dbName)
