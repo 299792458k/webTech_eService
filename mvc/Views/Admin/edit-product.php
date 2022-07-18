@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/block.css">
 
-    <title>Cập nhật sản phẩm</title>
+    <title>Thông tin sản phẩm</title>
 </head>
 <body>
     <?php

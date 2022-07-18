@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/block.css">
+    <style>
+      <?php include './mvc/Views/Admin/styles/block.css' ?>
+    </style>
+    <script>
+      <?php include './mvc/Views/Admin/js/scripts.js' ?>
+    </script>
 
     <title>Chi tiết hóa đơn</title>
 </head>

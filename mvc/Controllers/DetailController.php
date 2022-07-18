@@ -12,29 +12,18 @@ class DetailController extends BaseController {
     public function index() {
        $orders =  $this->model("OrderDetailModel")->showForUser();
        $order = [];
+       $sum = 0;
       if($orders != '') {
             while($order_item = mysqli_fetch_array($orders)) {
+                $sum += $order_item['product_price'] * $order_item['quatity'];
                 array_push($order, $order_item);
-                // echo $order_item['id'];
-            }
-            $this->view('User/cart/cart', ['carts' => $order]);
-            // echo $orders;
-      }
-      else echo "false";
-    }
+                
+            }    
+       } else {};
 
-    // public function history() {
-    //     $details = $this->model('OrderDetailModel')->history();
-    //     $items = [];
-    //     if($details != '') {
-    //         while($row = mysqli_fetch_array($details)) {
-    //             array_push($items, $row);
-    //             // echo $items['product_name'];
-    //         }
-    //         $this->view('Vu/manage-bill', ['items' => $items]);
-    //     }
-    //     else echo "nothing";
-    // }
+       $this->view('Vu/cart', ['carts' => $order, 'sum' => $sum]);
+        
+    }
 
     public function addproduct() {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -50,9 +39,9 @@ class DetailController extends BaseController {
             $result = $this->model('OrderDetailModel')->addToOrderDetail($product);
 
             if ($result != '') {
-               echo "done";
+               header('Location: http://aptorder.local/webTech_eService/order/history');
             } else {
-                echo "Insert Fail!!!";
+                header('Location: http://aptorder.local/webTech_eService/order/history');
             }
         }
     }

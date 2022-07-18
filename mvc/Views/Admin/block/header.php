@@ -1,35 +1,4 @@
-
-    <!-- header starts -->
-    <!-- <header>
-        <a href="#" class="logo"><i class="fas fa-utensils"></i>Food4U</a>
-
-        <div id="menu-bar" class="fas fa-bars"></div>
-
-        <nav class="navbar">
-            <ul>
-                <li><a href="./dashboard.php">Trang chủ</a></li>
-                <li><a href="./manage-product.php">Sản phẩm</a>
-                    <ul>
-                        <li><a href="./manage-product.php" title="Trang chủ">Tổng quan</a></li>
-                        <li><a href="./add-product.php" title="Giới thiệu">Thêm sản phẩm</a></li>
-                    </ul>
-                </li>
-                <li><a href="./manage-user.php">Người dùng</a>
-
-                    <ul>
-                        <li><a href="./manage-user.php" title="Trang chủ">Tổng quan</a></li>
-                        <li><a href="./add-user.php" title="Giới thiệu">Thêm người dùng</a></li>
-                    </ul>
-                </li>
-                <li><a href="./logout.php">Đăng xuất</a></li>
-            </ul>
-        </nav>
-    <script src="js/scripts.js"></script>
-
-    </header> -->
-    <!-- header ends -->
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
@@ -108,7 +77,7 @@ nav .navbar .links li a{
 nav .navbar .links li .arrow{
   /* background: red; */
   height: 100%;
-  width: 22px;
+  width: 40px;
   line-height: 70px;
   text-align: center;
   display: inline-block;
@@ -142,9 +111,7 @@ nav .navbar .links li:hover .js-sub-menu{
 .navbar .links li .sub-menu .more-arrow{
   line-height: 40px;
 }
-.navbar .links li .htmlCss-more-sub-menu{
-  /* line-height: 40px; */
-}
+
 .navbar .links li .sub-menu .more-sub-menu{
   position: absolute;
   top: 0;
@@ -241,9 +208,6 @@ nav .navbar .links li:hover .js-sub-menu{
   }
 }
 @media (max-width:800px){
-  nav{
-    /* position: relative; */
-  }
   .navbar .bx-menu{
     display: block;
   }
@@ -252,7 +216,7 @@ nav .navbar .links li:hover .js-sub-menu{
     top: 0;
     left: -100%;
     display: block;
-    max-width: 270px;
+    max-width: 400px;
     width: 100%;
     background:  #fff;
     line-height: 40px;
@@ -363,44 +327,10 @@ nav .navbar .links li .sub-menu li{
 
           <li>
             <a href="#">Thêm sản phẩm</a>
-            <!-- <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i> -->
-            <ul class="htmlCss-sub-menu sub-menu">
-            <!-- <li class="more">
-                <span><a href="#">Danh mục sản phẩm</a>
-                <i class='bx bxs-chevron-right arrow more-arrow'></i>
-              </span>
-                <ul class="more-sub-menu sub-menu">
-                  <li><a href="#">Pizza</a></li>
-                  <li><a href="#">Khai vị</a></li>
-                  <li><a href="#">Tráng miệng</a></li>
-                  <li><a href="#">Đồ uống</a></li>
-                  <li><a href="#">Topping</a></li>
-
-
-                </ul>
-              </li>  -->
-              <!-- <li><a href="#">Thêm sản phẩm</a></li> -->
-              <!-- <li><a href="#">Cập nhật sản phẩm</a></li>
-              <li><a href="#">Xóa sản phẩm</a></li> -->
-
-
-            </ul>
-          </li>
-          <!-- <li>
-            <a href="#">Người dùng</a>
-            <i class='bx bxs-chevron-down js-arrow arrow '></i>
-            <ul class="js-sub-menu sub-menu">
-              <li><a href="#">Danh sách người dùng</a></li>
-              <li><a href="#">Thêm người dùng</a></li>
-              <li><a href="#">Xóa người dùng</a></li>
-            </ul>
-          </li> -->
           <li><a href="#">Đơn hàng</a>
           <i class='bx bxs-chevron-down js-arrow arrow '></i>
             <ul class="js-sub-menu sub-menu">
               <li><a href="/webTech_eService/order/index">Danh sách đơn hàng</a></li>
-              <!-- <li><a href="#">Đơn hàng cần xác nhận</a></li> -->
-
             </ul>
           </a>
         </li>
@@ -414,13 +344,6 @@ nav .navbar .links li .sub-menu li{
           </li>
         </ul>
       </div>
-
-      <!-- <div class="search-box">
-        <i class='bx bx-search'></i>
-        <div class="input-box">
-          <input type="text" placeholder="Search...">
-        </div>
-      </div> -->
 
     </div>
   </nav>

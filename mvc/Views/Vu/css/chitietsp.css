@@ -86,7 +86,7 @@ section {
 
 .price {
     font-size: 1.7rem;
-    position: absolute;
+    /* position: absolute; */
     top: 1.5rem;
     left: 1.5rem;
     padding: 1rem 1.5rem;
