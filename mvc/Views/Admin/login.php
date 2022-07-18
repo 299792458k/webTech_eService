@@ -194,46 +194,33 @@ a.google span{
             <div class="form login">
                 <div class="form-content">
                     <header>Đăng nhập</header>
-                    <form action="#">
+                    <form action="/webTech_eService/admin/index" method="POST" enctype="multipart/form-data">
                         <div class="field input-field">
-                            <input type="email" placeholder="Email" class="input">
+                            <input type="email" name="email" placeholder="Email" class="input" required>
                         </div>
 
                         <div class="field input-field">
-                            <input type="password" placeholder="Mật khẩu" class="password">
+                            <input type="password" name="password" placeholder="Mật khẩu" class="password" required>
                             <i class='bx bx-hide eye-icon'></i>
                         </div>
 
-                        <div class="form-link">
+                        <!-- <div class="form-link">
                             <a href="#" class="forgot-pass">Quên mật khẩu?</a>
-                        </div>
+                        </div> -->
 
                         <div class="field button-field">
-                            <button>Đăng nhập</button>
+                            <button type="submit">Đăng nhập</button>
                         </div>
                     </form>
 
-                    <div class="form-link">
+                    <!-- <div class="form-link">
                         <span>Chưa có tài khoản</span>? <a href="#" class="link signup-link">Đăng ký</a></span>
-                    </div>
-                </div>
-
-                <div class="line"></div>
-
-
-
-                <div class="media-options">
-                    <a href="#" class="field google">
-                        <span>Liên hệ để nhận hỗ trợ</span>
-                    </a>
+                    </div> -->
                 </div>
 
             </div>
 
             </div>
         </section>
-
-        <!-- JavaScript -->
-        <!--<script src="js/script.js"></script>-->
     </body>
 </html>

@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/block.css">
+    <style>
+      <?php include './mvc/Views/Admin/styles/block.css' ?>
+    </style>
+    <script>
+      <?php include './mvc/Views/Admin/js/scripts.js' ?>
+    </script>
 
     <title>Danh sách sản phẩm</title>
 </head>
@@ -136,60 +141,33 @@ color: #17c0eb
 </style>
 
     <div class="container">
-      <div class="box">
-      <div class="image">
-         <!-----<img src="img1.jpeg">------->
-        </div>
-        <div class="name_job">Pizza Thịt Và Xúc Xích</div>
-        <div class="rating">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
-        </div>
-        <p> Pizza Thịt Và Xúc Xích Thơm Ngon Và Giàu Protein Với Thịt Xông Khói, Xúc Xích, ThịT Bò, Giăm Bông Và Pepperoni.</p>
-        <div class="btns">
-          <button>Xem</button>
-          <button>Xóa</button>
-        </div>
-      </div>
-      <div class="box">
-        <div class="image">
-        <!------  <img src="img2.jpeg" alt="">--->
-        </div>
-        <div class="name_job">Pizza Thịt Và Xúc Xích</div>
-        <div class="rating">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
-        </div>
-        <p> Pizza Thịt Và Xúc Xích Thơm Ngon Và Giàu Protein Với Thịt Xông Khói, Xúc Xích, ThịT Bò, Giăm Bông Và Pepperoni.</p>
-        <div class="btns">
-          <button>Xem</button>
-          <button>Xóa</button>
-        </div>
-      </div>
-      <div class="box">
-        <div class="image">
-         <!---- <img src="img3.jpeg" alt="">---->
-        </div>
-        <div class="name_job">Pizza Thịt Và Xúc Xích</div>
-          <div class="rating">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="far fa-star"></i>
-        </div>
-        <p> Pizza Thịt Và Xúc Xích Thơm Ngon Và Giàu Protein Với Thịt Xông Khói, Xúc Xích, ThịT Bò, Giăm Bông Và Pepperoni.</p>
-        <div class="btns">
-          <button>Xem</button>
-          <button>Xóa</button>
-        </div>
-      </div>
+      <?php
+        if($data['pros'] != '') {
+          foreach($data['pros'] as $product) {
+            echo '
+            <div class="box">
+              <div class="image">
+              <img src="'.$product['image'].'" alt="">
+              </div>
+              <div class="name_job">'.$product['name'].'</div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <p><b>Miêu tả: </b>'.$product['description'].'</p>
+              <p><b>Giá: </b>'.$product['price_free_size'].' vnđ</p>
+              <div class="btns">
+                <button>Xem/Cập nhật</button>
+                <button onclick="confirm_delete('.$product['id'].')">Xóa</button>
+              </div>
+            </div>
+          ';
+          }
+        }
+      ?>
     </div>
 
                             
@@ -198,8 +176,18 @@ color: #17c0eb
 
 
 <?php
-require_once "block/footer.php";
+  require_once "block/footer.php";
 ?>
+
+<script>
+    function confirm_delete(href) {
+      if (confirm("Bạn có chắc chắn muốn xóa?") == true) {
+        window.location.href = "http://localhost/webTech_eService/product/deleteProduct/"+href;
+      } else {
+//        text = "You canceled!";
+      }
+    }
+</script>
     
     </body>
 </html>

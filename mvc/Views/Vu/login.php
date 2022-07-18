@@ -36,6 +36,7 @@
     padding: 30px;
     border-radius: 6px;
     background: #FFF;
+    text-align: center;
 }
 .form.signup{
     opacity: 0;
@@ -111,7 +112,7 @@ form{
     font-weight: 400;
     color: #232836;
 }
-.form a{
+.form-content a{
     color: #0171d3;
     text-decoration: none;
 }
@@ -194,31 +195,34 @@ a.google span{
             <div class="form login">
                 <div class="form-content">
                     <header>Đăng nhập</header>
-                    <form action="#">
+                    <form action="/webTech_eService/user/index" method="POST" enctype="multipart/form-data">
                         <div class="field input-field">
-                            <input type="email" placeholder="Email" class="input">
+                            <input type="text" name="email" placeholder="Email" class="input">
                         </div>
 
                         <div class="field input-field">
-                            <input type="password" placeholder="Mật khẩu" class="password">
+                            <input type="password" name="password" placeholder="Mật khẩu" class="password">
                             <i class='bx bx-hide eye-icon'></i>
                         </div>
 
-                        <div class="form-link">
+                        <!-- <div class="form-link">
                             <a href="#" class="forgot-pass">Quên mật khẩu?</a>
-                        </div>
+                        </div> -->
 
                         <div class="field button-field">
-                            <button>Đăng nhập</button>
+                            <button type="submit">Đăng nhập</button>
                         </div>
                     </form>
 
                     <div class="form-link">
-                        <span>Chưa có tài khoản</span>? <a href="#" class="link signup-link">Đăng ký</a></span>
+                        <span>Chưa có tài khoản</span>? <a href="/webTech_eService/user/register" class="link signup-link">Đăng ký</a></span>
+                    </div>
+                    <div>
+                    <span><a href="/webTech_eService/user/register" class="link signup-link">Quay lại trang chủ</a></span>
                     </div>
                 </div>
 
-                <div class="line"></div>
+                <!-- <div class="line"></div>
 
 
 
@@ -226,7 +230,7 @@ a.google span{
                     <a href="#" class="field google">
                         <span>Liên hệ để nhận hỗ trợ</span>
                     </a>
-                </div>
+                </div> -->
 
             </div>
 

@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/chitietsp.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+       <style>
+        <?php include './mvc/Views/Vu/css/chitietsp.css' ?>
+        <?php echo ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> ' ?>
+        <?php
+          echo '
+          <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+          <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+          ';
+        ?>
+    </style>
+  
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <title>Lịch sử đặt hàng</title>
 </head>
 <body>
@@ -29,7 +40,8 @@
   <section>
 <div style="height:100px;"></div>
 
-      <div><style>
+<div>
+  <style>
 :root {
 
   /**
@@ -100,7 +112,7 @@ button {
   cursor: pointer;
 }
 
-ion-icon, span { display: inline-block; }
+ion-icon, span { display: inline-block; font-size: large; }
 
 label, img { display: block; }
 
@@ -108,6 +120,10 @@ input {
   font: inherit;
   width: 100%;
   border: none;
+  font-size: large;
+}
+.input-box{
+  margin-bottom: 15px;
 }
 
 input:focus { outline: 2px solid var(--orange); }
@@ -336,7 +352,7 @@ input::-webkit-outer-spin-button {
 
   .cart {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
     width: 100%;
     border-bottom: 1px solid var(--gainsboro);
   }
@@ -404,6 +420,7 @@ input::-webkit-outer-spin-button {
 
   <!--
     - cart section
+    
   -->
   <section class="cart">
 
@@ -411,142 +428,83 @@ input::-webkit-outer-spin-button {
 
       <!-- <h2 class="section-heading" style="font-size:20px; padding:10px;">Thứ tự</h2> -->
 
-      <div class="product-card">
+      <?php
+          foreach ($data['carts'] as $cart) {
+              echo '
+                  <div class="product-card">
 
-        <div class="card">
-
-          <div class="img-box">
-            <img src="./images/p-1.jpg" alt="Pizza hải sản" width="180px" class="product-img">
-          </div>
-
-          <div class="detail" >
-
-            <h4 class="product-name">Pizza hải sản</h4>
-
-            <div class="wrapper">
-
-              <div class="product-qty">
-                <button id="decrement">
-                  <ion-icon name="remove-outline"></ion-icon>
-                </button>
-
-                <span id="quantity" style="font-size:18px; padding:10px;">2</span>
-
-                <button id="increment">
-                  <ion-icon name="add-outline"></ion-icon>
-                </button>
-              </div>
-
-              <div class="price">
-                $ <span id="price">150000</span>
-              </div>
-
-            </div>
-
-          </div>
-
-          <button class="product-close-btn">
-            <ion-icon name="close-outline"></ion-icon>
-          </button>
-
-        </div>
-
-      </div>
-
-      <div class="product-card">
-
-        <div class="card">
-
-          <div class="img-box">
-            <img src="images/g-1.jpg" alt="Product1" width="180px" class="product-img">
-          </div>
-
-          <div class="detail">
-
-            <h4 class="product-name">Hamburger gà</h4>
-
-            <div class="wrapper">
-
-              <div class="product-qty">
-                <button id="decrement">
-                  <ion-icon name="remove-outline"></ion-icon>
-                </button>
-
-                <span id="quantity" style="font-size:20px; padding:10px;">1</span>
-
-                <button id="increment">
-                  <ion-icon name="add-outline"></ion-icon>
-                </button>
-              </div>
-
-              <div class="price">
-                $ <span id="price">30000</span>
-              </div>
-
-            </div>
-
-          </div>
-
-          <button class="product-close-btn">
-            <ion-icon name="close-outline"></ion-icon>
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="wrapper">
-
-      <div class="discount-token">
-
-
-
-        <div class="wrapper-flex">
-
-          <input type="text" name="discount-token" id="discount-token" class="input-default" placeholder="Nhập mã giảm giá" >
-
-          <button class="btn btn-outline" style="width:160px;">Áp dụng</button>
-
-        </div>
-
-      </div>
-
-      <div class="amount" style="font-size:16px; ">
-
-        <div class="subtotal" >
-          <span>Sản phẩm</span> <span><span id="subtotal">330000</span></span>
-        </div>
-
-        <div class="tax">
-          <span>Thuế (5%)</span> <span><span id="tax"></span>0</span>
-        </div>
-
-        <div class="shipping">
-          <span>Tiền vận chuyển</span> <span> <span id="shipping">0</span></span>
-        </div>
-
-        <div class="total">
-          <span>Tổng</span> <span><span id="total">415000</span></span>
-        </div>
-
-      </div>
-
-    </div>
-    
-
+                    <div class="card">
+            
+                      <div class="img-box">
+                        <img src="'.$cart['product_image'].'" alt="Pizza hải sản" width="180px" class="product-img">
+                      </div>
+            
+                      <div class="detail" >
+            
+                        <h4 class="product-name"><b>Tên sản phẩm: </b>'.$cart['product_name'].'</h4>
+            
+                        <div class="wrapper">
+            
+                          <div class="product-qty">
+                            <span id="quantity" style="font-size:18px; padding:10px;"><b>Số lượng: </b>'.$cart['quatity'].'</span>
+                          </div>
+            
+                          <div class="price">
+                            $ <span id="price"><b>Giá: </b>'.$cart['product_price'].'</span>
+                          </div>
+            
+                        </div>
+            
+                      </div>
+            
+                      <button class="product-close-btn" onclick="confirm_delete('.$cart['id'].')">
+                        <ion-icon name="close-outline"></ion-icon>
+                      </button>
+            
+                    </div>
+                </div>
+                <div>
+                      <h3>Tổng: '.$data['sum'].'</h3>
+                  </div>
+              ';
+          }
+      ?>
+   </div>
   </section>
   
-
 </div>
 
-
-<div style="   position: absolute;
-  right: 0px;
-  width: 50%;
-  padding: 10px;">
-<button class="btn btn-outline2" >Đặt hàng</button>
+<div style="padding: 10px;">
+  <form action="/webTech_eService/order/add" method="post">
+    <div class="user-details">
+      <div class="input-box">
+        <span class="details">Họ tên</span>
+        <input type="text" name="fullname" placeholder="Nguyễn Văn A" required>
+      </div>
+      <div class="input-box">
+        <span class="details">Địa chỉ</span>
+        <input type="text" name="address" placeholder="anhsao123" required>
+      </div>
+      <div class="input-box">
+        <span class="details">Số điện thoại</span>
+        <input type="text" name="phonenumber" placeholder="0986423359" required>
+      </div>
+      <div class="input-box">
+        <span class="details">Ghi chú</span>
+        <input type="text" name="note" placeholder="Anh123anh" required>
+      </div>
+      <div class="input-box">
+        <span class="details">Thời gian nhận</span>
+        <input type="date" name="order_time" placeholder="Anh123anh" required>
+      </div>
+    </div>
+    <div style="   position: absolute;
+      right: 0px;
+      width: 50%;
+      padding: 10px;">
+    <button class="btn btn-outline2" type="submit">Đặt hàng</button>
+    </div>
+  </form>
 
 </div>
 
@@ -576,11 +534,9 @@ input::-webkit-outer-spin-button {
 <!--
 - custom js link
 -->
-<script src="js/cart.js"></script>
-
-<!--
-- ionicon link
--->
+<script>
+  <?php include './mvc/Views/Vu/js/cart.js' ?>
+</script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 

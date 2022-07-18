@@ -1,35 +1,4 @@
-
-    <!-- header starts -->
-    <!-- <header>
-        <a href="#" class="logo"><i class="fas fa-utensils"></i>Food4U</a>
-
-        <div id="menu-bar" class="fas fa-bars"></div>
-
-        <nav class="navbar">
-            <ul>
-                <li><a href="./dashboard.php">Trang chủ</a></li>
-                <li><a href="./manage-product.php">Sản phẩm</a>
-                    <ul>
-                        <li><a href="./manage-product.php" title="Trang chủ">Tổng quan</a></li>
-                        <li><a href="./add-product.php" title="Giới thiệu">Thêm sản phẩm</a></li>
-                    </ul>
-                </li>
-                <li><a href="./manage-user.php">Người dùng</a>
-
-                    <ul>
-                        <li><a href="./manage-user.php" title="Trang chủ">Tổng quan</a></li>
-                        <li><a href="./add-user.php" title="Giới thiệu">Thêm người dùng</a></li>
-                    </ul>
-                </li>
-                <li><a href="./logout.php">Đăng xuất</a></li>
-            </ul>
-        </nav>
-    <script src="js/scripts.js"></script>
-
-    </header> -->
-    <!-- header ends -->
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
@@ -47,7 +16,7 @@ body{
   min-height: 100vh;
 }
 nav{
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -56,6 +25,9 @@ nav{
   background: #fff;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   z-index: 99;
+}
+a:hover {
+  color: #3E8DA8;
 }
 nav .navbar{
   height: 100%;
@@ -139,9 +111,7 @@ nav .navbar .links li:hover .js-sub-menu{
 .navbar .links li .sub-menu .more-arrow{
   line-height: 40px;
 }
-.navbar .links li .htmlCss-more-sub-menu{
-  /* line-height: 40px; */
-}
+
 .navbar .links li .sub-menu .more-sub-menu{
   position: absolute;
   top: 0;
@@ -238,9 +208,6 @@ nav .navbar .links li:hover .js-sub-menu{
   }
 }
 @media (max-width:800px){
-  nav{
-    /* position: relative; */
-  }
   .navbar .bx-menu{
     display: block;
   }
@@ -359,45 +326,11 @@ nav .navbar .links li .sub-menu li{
           <!-- <li><a href="#">Trang chủ</a></li> -->
 
           <li>
-            <a href="./manage-product.php">Sản phẩm</a>
-            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
-            <ul class="htmlCss-sub-menu sub-menu">
-            <li class="more">
-                <span><a href="./manage-product.php">Danh mục sản phẩm</a>
-                <i class='bx bxs-chevron-right arrow more-arrow'></i>
-              </span>
-                <ul class="more-sub-menu sub-menu">
-                  <li><a href="#">Pizza</a></li>
-                  <li><a href="#">Khai vị</a></li>
-                  <li><a href="#">Tráng miệng</a></li>
-                  <li><a href="#">Đồ uống</a></li>
-                  <li><a href="#">Topping</a></li>
-
-
-                </ul>
-              </li> 
-              <li><a href="./add-product.php">Thêm sản phẩm</a></li>
-              <!-- <li><a href="./edit-product.php">Cập nhật sản phẩm</a></li> -->
-              <!-- <li><a href="./manage-product.php">Xóa sản phẩm</a></li> -->
-
-
-            </ul>
-          </li>
-          <li>
-            <a href="#">Người dùng</a>
-            <i class='bx bxs-chevron-down js-arrow arrow '></i>
-            <ul class="js-sub-menu sub-menu">
-              <li><a href="./manage-user.php">Danh sách người dùng</a></li>
-              <li><a href="./add-user.php">Thêm người dùng</a></li>
-              <!-- <li><a href="#">Xóa người dùng</a></li> -->
-            </ul>
-          </li>
+            <a href="#">Thêm sản phẩm</a>
           <li><a href="#">Đơn hàng</a>
           <i class='bx bxs-chevron-down js-arrow arrow '></i>
             <ul class="js-sub-menu sub-menu">
-              <li><a href="./manage-bill.php">Danh sách đơn hàng</a></li>
-              <li><a href="#">Đơn hàng cần xác nhận</a></li>
-
+              <li><a href="/webTech_eService/order/index">Danh sách đơn hàng</a></li>
             </ul>
           </a>
         </li>
@@ -405,19 +338,12 @@ nav .navbar .links li .sub-menu li{
             <a href="#">Admin</a>
             <i class='bx bxs-chevron-down js-arrow arrow '></i>
             <ul class="js-sub-menu sub-menu">
-              <li><a href="./admin.php">Thông tin</a></li>
-              <li><a href="./login.php">Đăng xuất</a></li>
+              <li><a href="#">Thông tin</a></li>
+              <li><a href="/webTech_eService/admin/logout">Đăng xuất</a></li>
             </ul>
           </li>
         </ul>
       </div>
-
-      <!-- <div class="search-box">
-        <i class='bx bx-search'></i>
-        <div class="input-box">
-          <input type="text" placeholder="Search...">
-        </div>
-      </div> -->
 
     </div>
   </nav>

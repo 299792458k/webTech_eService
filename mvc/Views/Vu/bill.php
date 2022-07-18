@@ -5,18 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-      <?php include './mvc/Views/Admin/styles/block.css' ?>
+      <?php include './mvc/Views/Vu/styles/header.css' ?>
     </style>
     <script>
-      <?php include './mvc/Views/Admin/js/scripts.js' ?>
+      <?php include './mvc/Views/Vu/js/scripts.js' ?>
     </script>
 
     <title>Chi tiết hóa đơn</title>
 </head>
 <body>
-    <?php
-require_once "block/header.php";
-?>
 
   <section>
       <div style="display:flex; justify-content:center; align-items:center; height: 80vh;">
@@ -217,8 +214,7 @@ body:before{
                   </div>
                   <p>Tổng: '.$sum.' vnđ</p>
                   <div class="button1">
-                    <button onclick="confirm_delete('.$product['id'].')">Xác nhận</button>
-                    <button><a href="/webTech_eService/order/index" style="text-decoration: none;">Thoát</a></button>
+                    <button><a href="/webTech_eService/order/history" style="text-decoration: none;">Thoát</a></button>
                   </div>
             ';
           };
@@ -233,10 +229,6 @@ body:before{
         </div>        <div style="height:220px;"></div>
 </section>
 
-
-<?php
-require_once "block/footer.php";
-?>
 
 <script>
     function confirm_delete(href) {

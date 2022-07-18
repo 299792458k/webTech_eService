@@ -86,3 +86,12 @@ const totalCalc = function() {
     payAmountBtn.textContent = total.toFixed(2);
 
 }
+
+
+    function confirm_delete(href) {
+      if (confirm("Bạn có chắc chắn muốn xóa?") == true) {
+        window.location.href = "http://localhost/webTech_eService/detail/deleteitem/"+href;
+      } else {
+//        text = "You canceled!";
+      }
+    }

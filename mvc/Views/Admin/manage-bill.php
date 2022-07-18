@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/block.css">
+    <style>
+      <?php include './mvc/Views/Admin/styles/block.css' ?>
+    </style>
+    <script>
+      <?php include './mvc/Views/Admin/js/scripts.js' ?>
+    </script>
 
     <title>Danh sách hóa đơn</title>
 </head>
@@ -146,7 +150,7 @@ background: #d0f9fb;
 </style>
 
     <div class="content">
-      <div class="card one">
+      <!-- <div class="card one">
         <div class="top">
           <div class="title">Đặt Thành Công</div>
           <div class="title">B1058</div>
@@ -201,35 +205,42 @@ background: #d0f9fb;
           </div>
           <button>Xem chi tiết</button>
         </div>
-      </div>
-      <div class="card three">
-      <div class="top">
-          <div class="title">Chờ Xác Nhận</div>
-          <div class="title">B1057</div>
-
-
-        </div>
-        <div class="info">Thông tin hóa đơn</div>
-        <div class="details">
-          <div class="one">
-            <span>Khách hàng: anhsao123 </span>
-            <i class="fas fa-check"></i>
-          </div>
-          <div class="one">
-            <span>SĐT: 0987654321</span>
-            <i class="fas fa-check"></i>
-          </div>
-          <div class="one">
-            <span>Thời gian: 16/7/2022 13:40:00</span>
-            <i class="fas fa-times"></i>
-          </div>
-          <div class="one">
-            <span>Tổng: 540000</span>
-            <i class="fas fa-times"></i>
-          </div>
-          <button>Xem chi tiết</button>
-        </div>
-      </div>
+      </div> -->
+      <?php
+          foreach($data['orders'] as $product) {
+            echo '
+            <div class="card three">
+            <div class="top">
+                <div class="title">Chờ Xác Nhận</div>
+                <div class="title">B1057</div>
+      
+      
+              </div>
+              <div class="info">Thông tin hóa đơn</div>
+              <div class="details">
+                <div class="one">
+                  <span>Khách hàng: '.$product['fullname'].' </span>
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="one">
+                  <span>SĐT: '.$product['phonenumber'].'</span>
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="one">
+                  <span>Thời gian: '.$product['order_time'].'</span>
+                  <i class="fas fa-times"></i>
+                </div>
+                <div class="one">
+                  <span>Địa chỉ: '.$product['address'].'</span>
+                  <i class="fas fa-times"></i>
+                </div>
+                <button><a href="/webTech_eService/order/billShow/'.$product['id'].'">Xem chi tiết</a></button>
+              </div>
+            </div>
+            ';
+          }
+      ?>
+      
     </div>
 
 
