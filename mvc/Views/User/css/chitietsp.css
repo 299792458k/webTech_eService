@@ -1,0 +1,141 @@
+/* content */
+.food {
+    min-height: 100vh;
+    padding-top: 8rem;
+    color: #666;
+}
+
+.food .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+    /*align-items: flex-start;*/
+    background-color: #fff;
+    border-radius: .5rem;
+    
+}
+
+.food .box-container .box {
+    flex: 1 1 40rem;
+    position: relative;
+}
+
+.food .box-container .images {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 1rem;
+}
+
+.food .box-container .information {
+    padding: 1rem;
+    /* border: .1rem solid rgba(0, 0, 0, .1); */
+    min-height: 100%;
+}
+
+.food .box-container .information h3 {
+    font-size: 2.5rem;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+
+.food .box-container .infor {
+    font-size: 2rem;
+}
+
+.food .box-container .infor .ingredient {
+    padding: 1rem 0;
+}
+
+.food .box-container .infor ul{
+    list-style-position: inside;
+}
+
+.food .box-container .infor .size-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    /*justify-content: flex-start;*/ 
+}
+
+.food .box-container .infor .size-container p{
+    flex: 1 1 5rem;
+}
+
+.food .box-container .infor .size-container .size {
+    flex: 1 1 10rem;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    text-align: center;
+    padding: .5rem 0;
+}
+
+.food .box-container .infor .cost {
+    padding: 1rem 0;
+}
+
+.food .box-container .information .btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.food .box-container .infor .quantity {
+    padding: 1rem 0;
+}
+
+.infor .quantity input {
+    border: .1rem solid rgba(0, 0, 0, .1);
+    padding: .5rem 0;
+    text-align: center;
+    margin-left: 1.5rem;
+    width: 50%;
+
+}
+
+/* responsive */
+@media(max-width: 1000px) {
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem ;
+    }
+    
+/*    .food .box-container {
+        display: inline-block;
+    }*/
+}
+
+@media(max-width: 768px) {
+    html {
+        font-size: 55%;
+    }
+    header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem ;
+    }
+}
+
+
+@media(max-width: 400px) {
+    html {
+        font-size: 50%;
+    }
+    
+    header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem ;
+    }
+}
